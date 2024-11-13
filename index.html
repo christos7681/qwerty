@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video and Webcam App</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 120vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        #container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .video-section,
+        .camera-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #videoPlayer {
+            width: 640px;
+            height: 480px;
+            background: black;
+        }
+
+        #cameraFeed {
+            width: 640px;
+            height: 480px;
+            background: black;
+            transform: scaleX(-1);
+            /* Flip the camera horizontally */
+        }
+
+        /* Thumbnails Styles */
+        .thumbnails {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 20px; /* Space between video player and thumbnails */
+            justify-content: center;
+        }
+
+        .thumbnail {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            cursor: pointer;
+            border: 2px solid #ccc;
+            transition: transform 0.3s;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="container">
+        <!-- Video Player Section -->
+        <div class="video-section">
+            <video id="videoPlayer" controls>
+                <source id="videoSource" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>            <br>
+            <label>
+                <input type="checkbox" id="loopCheckbox"> Loop Video
+            </label>
+
+        
+    
+
+        <div class="thumbnails" id="thumbnails"></div>
+
+  
+        </div>
+
+        <!-- Camera Section -->
+        <div class="camera-section">
+            <video id="cameraFeed" autoplay playsinline></video>
+      
+    </div>
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
